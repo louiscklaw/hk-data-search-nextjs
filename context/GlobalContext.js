@@ -10,7 +10,8 @@ class GlobalContextProvider extends Component {
     helloworld:'helloworld',
     raw_all_api_manifest,
     package_list,
-    search_filter: ''
+    search_filter: '物業',
+    match_api_list: null
   };
 
   changeTheWorld = (in_text) => {
@@ -19,6 +20,10 @@ class GlobalContextProvider extends Component {
 
   updateSearchFilter = (in_text) => {
     this.setState({...this.state, search_filter: in_text})
+  }
+
+  updateMatchApiList = (api_list) => {
+    this.setState({...this.state, match_api_list: api_list})
   }
 
   getApiManifestKeys = () => {
@@ -33,12 +38,32 @@ class GlobalContextProvider extends Component {
     return this.state.raw_all_api_manifest[api_name][field]
   }
 
+  getApiManifestNameAndTitles = () => {
+    return this.getApiManifestKeys().map( (name) => {
+      return [name, this.getApiManifestTitle(name)]
+    })
+  }
+
   getApiManifestTitle = (api_name) => {
     return this.getApiManifestByApiName(api_name).result.title;
   }
 
   getApiManifestUpdateFrequency = (api_name) => {
     return this.getApiManifestByApiName(api_name).result.update_frequency;
+  }
+
+  filterApiMainfestByTitle = (text_interest) => {
+    if (text_interest.trim().length > 0){
+      var re = new RegExp(text_interest,'g')
+
+      this.updateMatchApiList(
+        this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
+        )
+    }else{
+      this.updateMatchApiList(
+        this.getApiManifestNameAndTitles()
+      )
+    }
   }
 
   render() {
@@ -49,7 +74,9 @@ class GlobalContextProvider extends Component {
         getApiManifestKeys: this.getApiManifestKeys,
         getApiManifestByApiName: this.getApiManifestByApiName,
         getApiManifestTitle: this.getApiManifestTitle,
-        updateSearchFilter: this.updateSearchFilter
+        updateSearchFilter: this.updateSearchFilter,
+        getApiManifestNameAndTitles: this.getApiManifestNameAndTitles,
+        filterApiMainfestByTitle: this.filterApiMainfestByTitle
         }}>
         { this.props.children }
       </GlobalContext.Provider>

@@ -13,8 +13,6 @@ function SearchApi(){
   return(
     <>
       <Nav></Nav>
-      {say('SITE_TITLE')}
-      {say('TEST')}
       <InputBox onChange={updateSearchFilter}></InputBox>
     </>
   )
