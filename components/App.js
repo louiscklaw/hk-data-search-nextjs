@@ -1,13 +1,13 @@
 import React from 'react';
 
 import SearchPanel from '../components/SearchPanel';
-import CardList from '../components/CardList';
+import ApiCardList from '../components/ApiCardList';
 
 function App(){
   return(
     <>
       <SearchPanel></SearchPanel>
-      <CardList></CardList>
+      <ApiCardList></ApiCardList>
     </>
   )
 }
