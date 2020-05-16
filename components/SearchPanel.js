@@ -1,10 +1,12 @@
 import React, {useContext} from 'react';
+import {Hero, Container, Title} from 'rbx';
 
 import InputBox from './InputBox';
 import Nav from './Nav';
 
-import {GlobalContext} from '../context/GlobalContext';
-import { LangContext } from '../context/LangContext';
+import {GlobalContext, LangContext} from '../context';
+
+import {meanings} from '../lang'
 
 function SearchApi(){
   const {updateSearchFilter} = useContext(GlobalContext);
@@ -12,8 +14,20 @@ function SearchApi(){
 
   return(
     <>
-      <Nav></Nav>
-      <InputBox onChange={updateSearchFilter}></InputBox>
+      <Nav />
+      <Hero color="light">
+        <Hero.Body>
+          <Container>
+            <Title>{say(meanings.SITE_TITLE)}</Title>
+            <Title as="h2" subtitle>
+              {say(meanings.SITE_TITLE_EXPLAIN)}
+            </Title>
+
+            <InputBox onChangeSearchFilter={updateSearchFilter}></InputBox>
+
+          </Container>
+        </Hero.Body>
+      </Hero>
     </>
   )
 }

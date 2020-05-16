@@ -19,10 +19,18 @@ class GlobalContextProvider extends Component {
   }
 
   updateSearchFilter = (in_text) => {
-    this.setState({...this.state, search_filter: in_text})
+    console.log('calling updateSearchFilter');
+    this.setState({
+      ...this.state,
+      search_filter: in_text,
+      match_api_list: this.filterApiMainfestByTitle(in_text)
+    })
+
+
   }
 
   updateMatchApiList = (api_list) => {
+    console.log('calling updateMatchApiList');
     this.setState({...this.state, match_api_list: api_list})
   }
 
@@ -52,17 +60,19 @@ class GlobalContextProvider extends Component {
     return this.getApiManifestByApiName(api_name).result.update_frequency;
   }
 
+  componentDidMount(){
+    console.log('componentDidMount')
+  }
+
   filterApiMainfestByTitle = (text_interest) => {
+    console.log('filterApiMainfestByTitle');
+
     if (text_interest.trim().length > 0){
       var re = new RegExp(text_interest,'g')
 
-      this.updateMatchApiList(
-        this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
-        )
+      return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
     }else{
-      this.updateMatchApiList(
-        this.getApiManifestNameAndTitles()
-      )
+      return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
     }
   }
 

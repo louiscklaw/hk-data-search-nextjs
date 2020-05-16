@@ -11,8 +11,10 @@ function InputBox(props){
 
   function handleOnChange(e){
     e.preventDefault();
-    props.onChange(e.target.value);
+    props.onChangeSearchFilter(e.target.value);
   }
+
+
 
   return(
     <>

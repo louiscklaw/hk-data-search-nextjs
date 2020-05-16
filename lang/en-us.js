@@ -1,6 +1,9 @@
 
 let HELLOWORLD = 'helloworld'
+
 let SITE_TITLE = 'hong kong statistics'
+let SITE_TITLE_EXPLAIN = 'data.gov.hk 的統計數字'
+
 
 let LINK_ABOUT_ME = 'About me'
 let LINK_INDEX = 'Index'
@@ -14,5 +17,6 @@ export default {
   TEST,
   LINK_ABOUT_ME,
   LINK_INDEX,
-  DEFAULT_SEARCH_TEXT
+  DEFAULT_SEARCH_TEXT,
+  SITE_TITLE_EXPLAIN
 }

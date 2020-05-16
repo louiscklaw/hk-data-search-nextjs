@@ -1,4 +1,5 @@
 // import App from 'next/app'
+import "rbx/index.css";
 
 import GlobalContextProvider from '../context/GlobalContext';
 import LangContextProvider from '../context/LangContext';
