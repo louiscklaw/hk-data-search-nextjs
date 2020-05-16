@@ -7,6 +7,7 @@ function App(){
   return(
     <>
       <SearchPanel></SearchPanel>
+      <br/>
       <CardList></CardList>
     </>
   )

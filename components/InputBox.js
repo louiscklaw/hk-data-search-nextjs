@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+import {GlobalContext} from '../context/GlobalContext';
+import {LangContext} from '../context/LangContext';
+
+import meanings from '../lang/meanings';
 
 function InputBox(props){
+  const {search_filter} = useContext(GlobalContext);
+  const {say} = useContext(LangContext);
 
   function handleOnChange(e){
     e.preventDefault();
@@ -9,7 +16,7 @@ function InputBox(props){
 
   return(
     <>
-      <input defaultValue='searchAPI' onChange={(e) => handleOnChange(e)}/>
+      <input defaultValue={say(meanings.HELLOWORLD)} onChange={(e) => handleOnChange(e)}/>
     </>
   )
 }

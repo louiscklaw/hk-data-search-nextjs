@@ -20,7 +20,12 @@ class LangContextProvider extends Component {
   say = (meaning) => {
     console.log(this.state.active_lang)
     // console.log(this.state[this.state.active_lang][meaning]);
-    return this.state[this.state.active_lang][meaning]
+    console.log(Object.keys(this.state[this.state.active_lang]).indexOf(meaning) );
+    if (Object.keys(this.state[this.state.active_lang]).indexOf(meaning) > -1){
+      return this.state[this.state.active_lang][meaning]
+    }else{
+      return meaning
+    }
   }
 
   render() {

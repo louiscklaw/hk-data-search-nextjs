@@ -7,14 +7,15 @@ import {GlobalContext} from '../context/GlobalContext';
 import { LangContext } from '../context/LangContext';
 
 function SearchApi(){
-  const {changeTheWorld} = useContext(GlobalContext);
+  const {updateSearchFilter} = useContext(GlobalContext);
   const {say} = useContext(LangContext);
 
   return(
     <>
       <Nav></Nav>
       {say('SITE_TITLE')}
-      <InputBox onChange={changeTheWorld}></InputBox>
+      {say('TEST')}
+      <InputBox onChange={updateSearchFilter}></InputBox>
     </>
   )
 }

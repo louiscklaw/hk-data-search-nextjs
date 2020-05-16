@@ -5,8 +5,6 @@ import App from '../components/App';
 import GlobalContextProvider from '../context/GlobalContext';
 import LangContextProvider from '../context/LangContext';
 
-
-
 function Index(){
   return(
     <GlobalContextProvider>
