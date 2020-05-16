@@ -2,8 +2,8 @@ import React, {useContext} from 'react';
 
 import {LangContext} from '../context/LangContext';
 
+import Links from '../components/Links';
 import ChangeLang from './TestButton';
-
 import meanings from '../lang/meanings';
 
 function Nav(){
@@ -24,11 +24,7 @@ function Nav(){
 
   return(
     <>
-      <ul>
-        <li>
-          {say(meanings.SITE_TITLE)}
-        </li>
-      </ul>
+      <Links />
 
       <ChangeLang
         defaultValue={active_lang}

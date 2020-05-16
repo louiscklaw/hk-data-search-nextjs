@@ -2,10 +2,15 @@
 let HELLOWORLD = 'helloworld'
 let SITE_TITLE = 'hong kong statistics'
 
+let LINK_ABOUT_ME = 'About me'
+let LINK_INDEX = 'Index'
+
 let TEST = 'TEST'
 
 export default {
   HELLOWORLD,
   SITE_TITLE,
-  TEST
+  TEST,
+  LINK_ABOUT_ME,
+  LINK_INDEX
 }
