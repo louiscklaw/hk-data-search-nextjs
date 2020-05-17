@@ -5,31 +5,41 @@ import {LangContext} from '../context/LangContext';
 
 import ApiCard from './ApiCard';
 
-import meanings from '../lang/meanings';
-
 function CardList(){
-const {match_api_list} = useContext(GlobalContext);
+  const {match_api_list} = useContext(GlobalContext);
   const {say} = useContext(LangContext);
   return(
     <>
-      <ApiCard
-        title='test title'
-        description='test description'
-      />
-      package list
-      <pre>
-        Number of match
-        <br/>
-        {match_api_list ? match_api_list.length : 0}
-      </pre>
+      <div className="api-card-list"
+        style={{
+          minHeight: "400px",
 
-      <pre>
-        {
-          JSON.stringify(
+          display: "flex",
+          flexFlow: "row wrap",
+          justifyContent: "space-evenly"
+        }}
+        >
+          {
+
             match_api_list
-          )
-        }
-      </pre>
+              .filter( x => x!=null)
+              .map((x) => {
+              return (
+                <ApiCard
+                  key={x}
+                  className="card"
+                  api_id={x[0]}
+                  title={x[0]}
+                  description={x[1]}
+                  tag={['1','2','3']}
+                  link='//www.google.com'
+                />
+              )
+            })
+          }
+
+
+      </div>
     </>
   )
 }

@@ -11,8 +11,12 @@ class GlobalContextProvider extends Component {
     raw_all_api_manifest,
     package_list,
     search_filter: '物業',
-    match_api_list: null
+    match_api_list: [null]
   };
+
+  componentDidMount(){
+    this.updateSearchFilter(this.state.search_filter)
+  }
 
   changeTheWorld = (in_text) => {
     this.setState({helloworld: in_text})
@@ -46,34 +50,64 @@ class GlobalContextProvider extends Component {
     return this.state.raw_all_api_manifest[api_name][field]
   }
 
+
+  getApiManifestDescription = (api_name) => {
+    return this.getApiManifestByApiName(api_name).result.resources[0].description;
+  }
+
+  getApiManifestNameAndDescriptions = () => {
+    return this.getApiManifestKeys().map( (name) => {
+      return [name, this.getApiManifestDescription(name)]
+    })
+  }
+
+  getApiManifestNote = (api_name) => {
+    return this.getApiManifestByApiName(api_name).result.notes;
+  }
+
+  getApiManifestNameAndNotes = () => {
+    return this.getApiManifestKeys().map( (name) => {
+      return [name, this.getApiManifestNote(name)]
+    })
+  }
+
+
+
+  getApiManifestTitle = (api_name) => {
+    return this.getApiManifestByApiName(api_name).result.title;
+  }
+
   getApiManifestNameAndTitles = () => {
     return this.getApiManifestKeys().map( (name) => {
       return [name, this.getApiManifestTitle(name)]
     })
   }
 
-  getApiManifestTitle = (api_name) => {
-    return this.getApiManifestByApiName(api_name).result.title;
-  }
-
   getApiManifestUpdateFrequency = (api_name) => {
     return this.getApiManifestByApiName(api_name).result.update_frequency;
-  }
-
-  componentDidMount(){
-    console.log('componentDidMount')
   }
 
   filterApiMainfestByTitle = (text_interest) => {
     console.log('filterApiMainfestByTitle');
 
-    if (text_interest.trim().length > 0){
-      var re = new RegExp(text_interest,'g')
+    var re = new RegExp(text_interest,'g')
 
-      return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
-    }else{
-      return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
-    }
+    console.log(this.getApiManifestNameAndNotes())
+
+    // search by title
+    return [
+      ...this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } ),
+      ...this.getApiManifestNameAndNotes().filter((x) => { return x[1].search(re) > -1 } ),
+      // ...this.getApiManifestNameAndDescriptions().filter((x) => { return x[1].search(re) > -1 } )
+    ]
+
+    // if (text_interest.trim().length > 0){
+    //   var re = new RegExp(text_interest,'g')
+
+    //   return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
+    // }else{
+    //   return this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } )
+    // }
   }
 
   render() {

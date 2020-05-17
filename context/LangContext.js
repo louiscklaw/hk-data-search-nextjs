@@ -1,5 +1,7 @@
 import React , { Component, createContext } from 'react'
 
+import meanings from '../lang/meanings';
+
 import zh_hk from '../lang/zh-hk'
 import en_us from '../lang/en-us'
 
@@ -9,18 +11,16 @@ class LangContextProvider extends Component {
   state = {
     active_lang: "en_us",
     zh_hk: zh_hk,
-    en_us: en_us
+    en_us: en_us,
+    meanings: meanings
   };
 
   changeLang = (in_text) => {
-    console.log(this.state);
     this.setState({...this.state, active_lang: in_text})
   }
 
   say = (meaning) => {
-    console.log(this.state.active_lang)
     // console.log(this.state[this.state.active_lang][meaning]);
-    console.log(Object.keys(this.state[this.state.active_lang]).indexOf(meaning) );
     if (Object.keys(this.state[this.state.active_lang]).indexOf(meaning) > -1){
       return this.state[this.state.active_lang][meaning]
     }else{

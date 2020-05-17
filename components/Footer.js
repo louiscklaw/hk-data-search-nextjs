@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+import {GlobalContext} from '../context';
 
 function Footer(){
+  const {match_api_list} = useContext(GlobalContext);
   return(
     <>
-      Footer Helloworld
+      package list
+
+
+            <pre>
+              {
+                JSON.stringify(
+                  match_api_list
+                )
+              }
+            </pre>
     </>
   )
 }

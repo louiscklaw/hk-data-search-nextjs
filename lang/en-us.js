@@ -1,4 +1,3 @@
-
 let HELLOWORLD = 'helloworld'
 
 let SITE_TITLE = 'hong kong statistics'
@@ -11,6 +10,8 @@ let LINK_INDEX = 'Index'
 let TEST = 'TEST'
 let DEFAULT_SEARCH_TEXT = 'DEFAULT_SEARCH_TEXT'
 
+let MORE_INFO = "more info"
+
 export default {
   HELLOWORLD,
   SITE_TITLE,
@@ -18,5 +19,6 @@ export default {
   LINK_ABOUT_ME,
   LINK_INDEX,
   DEFAULT_SEARCH_TEXT,
-  SITE_TITLE_EXPLAIN
+  SITE_TITLE_EXPLAIN,
+  MORE_INFO
 }

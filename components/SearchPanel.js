@@ -9,7 +9,7 @@ import {GlobalContext, LangContext} from '../context';
 import {meanings} from '../lang'
 
 function SearchApi(){
-  const {updateSearchFilter} = useContext(GlobalContext);
+  const {updateSearchFilter, match_api_list} = useContext(GlobalContext);
   const {say} = useContext(LangContext);
 
   return(
@@ -24,7 +24,11 @@ function SearchApi(){
             </Title>
 
             <InputBox onChangeSearchFilter={updateSearchFilter}></InputBox>
-
+            <pre>
+              Number of match
+              <br/>
+              {match_api_list ? match_api_list.length : 0}
+            </pre>
           </Container>
         </Hero.Body>
       </Hero>

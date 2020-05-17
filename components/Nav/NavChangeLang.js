@@ -9,7 +9,6 @@ function NavChangeLang(props){
   console.log(active_lang);
 
   function changeLangOnClick(e){
-    changeLang(e.target.value);
   }
 
   return(

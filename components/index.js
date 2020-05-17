@@ -1,5 +1,8 @@
 import Links from './Links'
 
-export default {
-  Links
+import Footer from './Footer';
+
+export {
+  Links,
+  Footer
 }
