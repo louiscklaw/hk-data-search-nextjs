@@ -1,6 +1,5 @@
 import React , { Component, createContext } from 'react'
-
-
+import {useRouter} from 'next/router';
 import meanings from '../lang/meanings';
 
 import zh from '../lang/zh'
@@ -8,39 +7,25 @@ import en from '../lang/en'
 
 export const LangContext = createContext();
 
-class LangContextProvider extends Component {
-  state = {
-    active_lang: "en",
-    zh: zh,
-    en: en,
-    meanings: meanings
-  };
+function LangContextProvider(props){
+  const {query} = useRouter();
 
-  changeLang = (in_text) => {
-    this.setState({...this.state, active_lang: in_text})
-  }
-
-  say = (meaning) => {
-    // console.log(this.state[this.state.active_lang][meaning]);
-    if (Object.keys(this.state[this.state.active_lang]).indexOf(meaning) > -1){
-      return this.state[this.state.active_lang][meaning]
-
+  function say(meaning){
+    if (query.lang == 'en') {
+      console.log(en)
+      return en[meaning]
     }else{
-      return meaning
+      return zh[meaning]
     }
   }
 
-  render() {
-    return (
-      <LangContext.Provider value={{
-        ...this.state,
-        changeLang: this.changeLang,
-        say: this.say
-        }}>
-        { this.props.children }
-      </LangContext.Provider>
-    );
-  }
+  return (
+    <LangContext.Provider value={{
+      say
+      }}>
+      { props.children }
+    </LangContext.Provider>
+  );
 }
 
 export default LangContextProvider;

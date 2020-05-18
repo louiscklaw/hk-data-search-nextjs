@@ -25,7 +25,7 @@ function ApiCard(props){
           <div>{props.tag}</div>
           <div>{props.link}</div>
 
-      <div>{say(meanings.MORE_INFO)}</div>
+      <div>{say('zh',meanings.MORE_INFO)}</div>
         </Card.Content>
       </Card>
     </>
