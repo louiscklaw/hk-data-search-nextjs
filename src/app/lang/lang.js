@@ -4,8 +4,6 @@ let ZH = 'zh';
 
 
 export default {
-  LANG : {
     EN,
     ZH
-  }
 }

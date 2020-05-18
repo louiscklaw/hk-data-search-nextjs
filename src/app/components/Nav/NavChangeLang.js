@@ -1,21 +1,16 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Link from 'next/link';
-import {Navbar, Button} from 'rbx';
+import Router from 'next/router'
 
-import {LangContext} from '../../context';
+import {Button} from 'rbx';
 
-function NavChangeLang(props){
-  const {active_lang, changeLang} = useContext(LangContext)
-  console.log(active_lang);
+import {LANG} from '../../lang';
 
-  function changeLangOnClick(e){
-    changeLang(e.target.value);
-  }
-
+function NavChangeLang(){
   return(
     <>
-      <Button value="en_us" onClick={(e) => {changeLangOnClick(e)}}>En</Button>
-      <Button value="zh_hk" onClick={(e) => {changeLangOnClick(e)}}>繁</Button>
+      <Button onClick={(e)=> { Router.push('/'+LANG.EN) }}>En</Button>
+      <Button onClick={(e)=> { Router.push('/'+LANG.ZH) }}>繁</Button>
     </>
   )
 }

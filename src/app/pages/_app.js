@@ -5,6 +5,7 @@ import GlobalContextProvider from '../context/GlobalContext';
 import LangContextProvider from '../context/LangContext';
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <GlobalContextProvider>
       <LangContextProvider>

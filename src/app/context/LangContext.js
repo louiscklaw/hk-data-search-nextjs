@@ -1,5 +1,6 @@
 import React , { Component, createContext } from 'react'
 
+
 import meanings from '../lang/meanings';
 
 import zh from '../lang/zh'
@@ -23,6 +24,7 @@ class LangContextProvider extends Component {
     // console.log(this.state[this.state.active_lang][meaning]);
     if (Object.keys(this.state[this.state.active_lang]).indexOf(meaning) > -1){
       return this.state[this.state.active_lang][meaning]
+
     }else{
       return meaning
     }
