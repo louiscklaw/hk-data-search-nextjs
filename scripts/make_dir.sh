@@ -8,7 +8,7 @@ cd src
 
   cd app
     npm init -y
-    yarn add next react react-dom \
+    npm install --save next react react-dom \
     @fortawesome/fontawesome-svg-core \
     @fortawesome/free-solid-svg-icons \
     @fortawesome/react-fontawesome \
@@ -19,7 +19,7 @@ cd src
 
   cd functions
     npm init -y
-    yarn add next react react-dom firebase-admin firebase-tools firebase-functions \
+    npm install --save next react react-dom firebase-admin firebase-tools firebase-functions \
     @fortawesome/fontawesome-svg-core \
     @fortawesome/free-solid-svg-icons \
     @fortawesome/react-fontawesome \
