@@ -8,7 +8,7 @@ import {LangContext} from '../context/LangContext';
 // import Links from '../Links';
 import Links from './Links';
 
-
+import {LANG_LIST} from '../lang'
 import meanings from '../lang/meanings';
 // import meanings from '../../lang/meanings';
 // import {meanings} from '../../lang/index';
@@ -20,6 +20,7 @@ import NavSignUpButton from './Nav/NavSignUpButton';
 import NavChangeLang from './Nav/NavChangeLang';
 
 function Nav(){
+  console.log('findme');
   const {say, active_lang,changeLang} = useContext(LangContext);
 
   function handleOnChange(e){

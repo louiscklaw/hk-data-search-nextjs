@@ -1,13 +1,11 @@
 import React, {useContext} from 'react';
 import Link from 'next/link';
-
 import {LangContext} from '../context/LangContext';
 
-import meanings from '../lang/meanings';
+import {meanings} from '../lang';
 
 function Links(){
   let {say} = useContext(LangContext);
-
   return(
     <ul>
       <li>

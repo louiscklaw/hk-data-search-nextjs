@@ -8,7 +8,7 @@ import {LangContext} from '../context/LangContext';
 // import Links from '../Links';
 import Links from './Links';
 
-
+import {LANG} from '../lang';
 import meanings from '../lang/meanings';
 // import meanings from '../../lang/meanings';
 // import {meanings} from '../../lang/index';
@@ -23,10 +23,10 @@ function Nav(){
   const {say, active_lang,changeLang} = useContext(LangContext);
 
   function handleOnChange(e){
-    if (active_lang=='en_us'){
-      changeLang('zh_hk');
+    if (active_lang==LANG.EN){
+      changeLang(LANG.ZH);
     }else{
-      changeLang('en_us');
+      changeLang(LANG.EN);
     }
 
   }

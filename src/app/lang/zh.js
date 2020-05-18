@@ -1,4 +1,4 @@
-import en_us from './en-us'
+import en from './en'
 
 let HELLOWORLD = '老友你好'
 let SITE_TITLE = '統計數字一覧'
@@ -11,7 +11,7 @@ let MORE_INFO="更多資料"
 
 let DEFAULT_SEARCH_TEXT = '預設字'
 export default {
-  ...en_us,
+  ...en,
   HELLOWORLD,
   SITE_TITLE,
   TEST,

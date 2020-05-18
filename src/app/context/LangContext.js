@@ -2,16 +2,16 @@ import React , { Component, createContext } from 'react'
 
 import meanings from '../lang/meanings';
 
-import zh_hk from '../lang/zh-hk'
-import en_us from '../lang/en-us'
+import zh from '../lang/zh'
+import en from '../lang/en'
 
 export const LangContext = createContext();
 
 class LangContextProvider extends Component {
   state = {
-    active_lang: "en_us",
-    zh_hk: zh_hk,
-    en_us: en_us,
+    active_lang: "en",
+    zh: zh,
+    en: en,
     meanings: meanings
   };
 

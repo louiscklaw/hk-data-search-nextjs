@@ -1,6 +1,8 @@
 import meanings from './meanings';
+import LANG_LIST from './lang'
 
 
 export {
-  meanings
+  meanings,
+  LANG_LIST
 }
