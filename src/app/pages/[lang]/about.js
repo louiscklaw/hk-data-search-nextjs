@@ -1,7 +1,7 @@
 import React from 'react';
-import Links from '../components/Links';
+import Links from '../../components/Links';
 
-import Helloworld1 from '../components/helloworld1';
+import Helloworld1 from '../../components/helloworld1';
 
 function About(){
   return(

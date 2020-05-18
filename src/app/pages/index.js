@@ -1,12 +1,12 @@
 import React from 'react';
-
-import App from '../components/App';
+import Router from 'next/router';
 
 function Index(){
+  React.useEffect(() => {
+    Router.replace('/[lang]','/en')
+  })
   return(
-    <>
-      <App />
-    </>
+    <></>
   )
 }
 
