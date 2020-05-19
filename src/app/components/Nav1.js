@@ -2,24 +2,22 @@ import React, {useContext} from 'react';
 import Link from 'next/link';
 import {Navbar, Button} from 'rbx';
 
-import {LangContext} from '../../context';
+import {LangContext} from '../context/LangContext';
 // import {LangContext} from '../../context';
 
 // import Links from '../Links';
-import Links from '../Links';
+import Links from './Links';
 
-import {LANG} from '../../lang';
-import meanings from '../../lang/meanings';
-// import meanings from '../../../lang/meanings';
-// import {meanings} from '../../../lang/index';
+import {LANG} from '../lang';
+import meanings from '../lang/meanings';
+// import meanings from '../../lang/meanings';
+// import {meanings} from '../../lang/index';
 
-import NavItem from './NavItem';
-import NavLoginButton from './NavLoginButton';
-import NavSignUpButton from './NavSignUpButton';
+import NavItem from './Nav/NavItem';
+import NavLoginButton from './Nav/NavLoginButton';
+import NavSignUpButton from './Nav/NavSignUpButton';
 
-import NavChangeLang from './NavChangeLang';
-
-import { get_link } from '../../util';
+import NavChangeLang from './Nav/NavChangeLang';
 
 function Nav(){
   const {say, getCurrentLang,changeLang} = useContext(LangContext);
@@ -54,10 +52,33 @@ function Nav(){
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <NavItem name={say(meanings.LINK_INDEX)} to_href={get_link('/')}></NavItem>
+            <a className="navbar-item">
+              Home
+            </a>
 
-            <NavItem name={say(meanings.LINK_ABOUT_ME)} to_href={get_link('/about')}></NavItem>
+            <a className="navbar-item">
+              Documentation
+            </a>
 
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
+                More
+              </a>
+
+              <div className="navbar-dropdown">
+                <a className="navbar-item"> About </a>
+                <a className="navbar-item">
+                  Jobs
+                </a>
+                <a className="navbar-item">
+                  Contact
+                </a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item">
+                  Report an issue
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -65,9 +86,12 @@ function Nav(){
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-
-              <NavChangeLang></NavChangeLang>
-              <NavSignUpButton></NavSignUpButton>
+              <a className="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a className="button is-light">
+                Log in
+              </a>
             </div>
           </div>
         </div>

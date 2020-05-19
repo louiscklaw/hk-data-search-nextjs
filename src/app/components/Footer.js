@@ -12,9 +12,9 @@ function Footer(){
   const {match_api_list} = useContext(GlobalContext);
   return(
     <>
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
+      <footer className="footer">
+        <div className="container">
+          <div className="content has-text-centered">
 
           <p>
             <a href="" className="social-link">

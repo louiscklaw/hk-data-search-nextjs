@@ -1,12 +1,17 @@
-import React, {useContext} from 'react';
-import Link from 'next/link';
+import React from 'react';
 
-import {Navbar, Button} from 'rbx';
-
-function NavSignUpButton(props){
+function NavSignUp(){
   return(
-    <Button color="light">Log in</Button>
+    <>
+      <a className="button is-primary">
+        <strong>Sign up</strong>
+      </a>
+
+      <a className="button is-light">
+        Log in
+      </a>
+    </>
   )
 }
 
-export default NavSignUpButton
+export default NavSignUp

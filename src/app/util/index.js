@@ -1,11 +1,4 @@
-import React,{useContext} from 'react';
-
-import {LangContext} from '../context'
-
-function get_link(in_href){
-  let {active_lang} = useContext(LangContext);
-  return '/'+active_lang+in_href
-}
+import {get_link} from './get_link'
 
 export {
   get_link

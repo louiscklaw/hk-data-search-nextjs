@@ -23,7 +23,6 @@ class GlobalContextProvider extends Component {
   }
 
   updateSearchFilter = (in_text) => {
-    console.log('calling updateSearchFilter');
     this.setState({
       ...this.state,
       search_filter: in_text,
@@ -34,7 +33,6 @@ class GlobalContextProvider extends Component {
   }
 
   updateMatchApiList = (api_list) => {
-    console.log('calling updateMatchApiList');
     this.setState({...this.state, match_api_list: api_list})
   }
 
@@ -88,11 +86,9 @@ class GlobalContextProvider extends Component {
   }
 
   filterApiMainfestByTitle = (text_interest) => {
-    console.log('filterApiMainfestByTitle');
 
     var re = new RegExp(text_interest,'g')
 
-    console.log(this.getApiManifestNameAndNotes())
 
     // search by title
     return [
@@ -120,7 +116,8 @@ class GlobalContextProvider extends Component {
         getApiManifestTitle: this.getApiManifestTitle,
         updateSearchFilter: this.updateSearchFilter,
         getApiManifestNameAndTitles: this.getApiManifestNameAndTitles,
-        filterApiMainfestByTitle: this.filterApiMainfestByTitle
+        filterApiMainfestByTitle: this.filterApiMainfestByTitle,
+        getApiManifestNameAndTitles:this.getApiManifestNameAndTitles,
         }}>
         { this.props.children }
       </GlobalContext.Provider>

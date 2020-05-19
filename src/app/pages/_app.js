@@ -1,6 +1,4 @@
 // import App from 'next/app'
-import "rbx/index.css";
-
 import GlobalContextProvider from '../context/GlobalContext';
 import LangContextProvider from '../context/LangContext';
 
@@ -12,8 +10,19 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         <style jsx global>{`
         * {
-            padding: 0px; margin: 0px; box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
           }
+
+        body {
+          min-height: 100vh;
+        }
+
+        #__next {
+          min-height: 100vh;
+        }
+
         `}</style>
       </LangContextProvider>
     </GlobalContextProvider>

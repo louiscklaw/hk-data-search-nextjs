@@ -1,13 +1,16 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-import {Navbar} from 'rbx';
+import {get_link} from '../../util'
 
-function NavItem(props){
+function NavItem({name, to_href}){
   return(
-    <Link href={props.href} as={props.as}>
-      <Navbar.Item>{props.text}</Navbar.Item>
+    <Link href={get_link('/')}>
+      <a className="navbar-item">
+        {name}
+      </a>
     </Link>
+
   )
 }
 
