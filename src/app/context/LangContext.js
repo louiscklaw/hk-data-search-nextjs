@@ -5,7 +5,9 @@ import meanings from '../lang/meanings';
 import zh from '../lang/zh'
 import en from '../lang/en'
 
-export const LangContext = createContext();
+export const LangContext = createContext({
+  meanings
+});
 
 function LangContextProvider(props){
   const {query} = useRouter();
@@ -21,6 +23,7 @@ function LangContextProvider(props){
 
   return (
     <LangContext.Provider value={{
+      meanings,
       say
       }}>
       { props.children }
