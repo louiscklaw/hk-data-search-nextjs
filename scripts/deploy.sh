@@ -15,3 +15,6 @@ cd ../..
 cp src/functions/package.json src/functions/package.json.last_known_good
 
 cp src/functions/package.json overlay/src/functions/package.json.last_known_good
+
+
+firefox https://hk-data-search-8703a.web.app

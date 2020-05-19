@@ -1,5 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+function createMarkup() {
+  return {__html: "document.addEventListener('DOMContentLoaded', () => { const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);"};
+};
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -22,6 +26,9 @@ class MyDocument extends Document {
           <NextScript />
 
         </body>
+        <script src="/nav_burger_activate.js"/>
+
+
       </Html>
     )
   }

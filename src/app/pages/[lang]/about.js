@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 
-import {Title} from '../../components'
 import Links from '../../components/Links';
 import Helloworld1 from '../../components/helloworld1';
 

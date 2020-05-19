@@ -2,7 +2,6 @@ import React, {useContext, useEffect} from 'react';
 import Router from 'next/router'
 import Head from 'next/head'
 
-import {Title} from '../../components';
 import App from '../../components/App';
 import {LangContext} from '../../context';
 

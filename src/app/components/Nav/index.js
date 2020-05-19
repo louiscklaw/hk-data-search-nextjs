@@ -57,18 +57,19 @@ function Nav(){
             <NavItem name={say(meanings.LINK_ABOUT_ME)} to_href={'/about'}></NavItem>
 
           </div>
-        </div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
 
-
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-
-              <NavChangeLang></NavChangeLang>
-              <NavSignUpButton></NavSignUpButton>
+                <NavChangeLang></NavChangeLang>
+                <NavSignUpButton></NavSignUpButton>
+              </div>
             </div>
           </div>
         </div>
+
+
+
       </nav>
     </>
   )
