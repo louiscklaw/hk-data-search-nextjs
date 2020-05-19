@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
+import {Footer} from '../../../components'
+
+
 function ApiIdIndex({api_id}){
   return(
     <>
@@ -9,6 +12,12 @@ function ApiIdIndex({api_id}){
       <Link href={ '/en' } >
         <a>Back</a>
       </Link>
+
+      <pre>
+        {JSON.stringify({test: 'testing'}, null, 1)}
+      </pre>
+
+      <Footer></Footer>
     </>
   )
 }
