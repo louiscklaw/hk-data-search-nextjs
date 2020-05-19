@@ -8,6 +8,16 @@ let SITE_TITLE_EXPLAIN = 'data.gov.hk 的統計數字'
 let TEST = 'test'
 let TEST_PAGE = 'test page'
 
+let SIGN_UP='Sign up'
+let LOG_IN = 'Log in'
+
+
+let USEFUL='useful'
+let USELESS = 'useless'
+let LAST_UPDATE = 'last update'
+
+let API_OUTPUT_FORMAT = 'output format'
+
 export default {
   DEFAULT_SEARCH_TEXT,
   HELLOWORLD,
@@ -18,4 +28,10 @@ export default {
   SITE_TITLE,
   TEST_PAGE,
   TEST,
+  SIGN_UP,
+  LOG_IN,
+  USEFUL,
+  USELESS,
+  LAST_UPDATE,
+  API_OUTPUT_FORMAT
 }

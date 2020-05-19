@@ -6,7 +6,8 @@ import {LangContext} from '../context/LangContext';
 import ApiCard from './ApiCard';
 
 function CardList(){
-  const {match_api_list} = useContext(GlobalContext);
+  const {match_api_list, getApiManifestByApiTitle} = useContext(GlobalContext);
+
   return(
     <>
       <div className="api-card-list"
@@ -21,23 +22,26 @@ function CardList(){
           {
 
             match_api_list
-              .filter( x => x!=null)
+              .filter( x => x!=null )
               .map((x) => {
-              return (
-                <ApiCard
-                  key={x}
-                  className="card"
-                  api_id={x[0]}
-                  title={x[0]}
-                  description={x[1]}
-                  tag={['1','2','3']}
-                  link='//www.google.com'
-                />
-              )
+                const current_api = getApiManifestByApiTitle(x)
+
+                return (
+                  <ApiCard
+                    // TODO: better key handling
+                    key={current_api.id}
+                    className="card"
+                    api_id={x}
+                    title={x}
+                    description={current_api.result.notes}
+                    tags={[
+                      current_api.result.maintainer
+                    ]}
+                    link='//www.google.com'
+                  />
+                )
             })
           }
-
-
       </div>
     </>
   )

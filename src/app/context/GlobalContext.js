@@ -26,7 +26,7 @@ class GlobalContextProvider extends Component {
     this.setState({
       ...this.state,
       search_filter: in_text,
-      match_api_list: this.filterApiMainfestByTitle(in_text)
+      match_api_list: this.searchApiMainfest(in_text)
     })
 
 
@@ -81,21 +81,40 @@ class GlobalContextProvider extends Component {
     })
   }
 
+
+
   getApiManifestUpdateFrequency = (api_name) => {
     return this.getApiManifestByApiTitle(api_name).result.update_frequency;
   }
 
-  filterApiMainfestByTitle = (text_interest) => {
+  searchApiMainfest = (search_text) => {
+    var re = new RegExp(search_text,'g')
 
+    return [...new Set(
+      [
+        ...this.getApiManifestNameAndTitles()
+          .filter((x) => { return x[1].search(re) > -1 } )
+          .map((x) => {return x[0]})
+          ,
+        ...this.getApiManifestNameAndNotes()
+          .filter((x) => { return x[1].search(re) > -1 } )
+          .map((x) => {return x[0]})
+          ,
+        // ...this.getApiManifestNameAndDescriptions().filter((x) => { return x[1].search(re) > -1 } )
+      ]
+    )]
+  }
+
+  filterApiMainfestByTitle = (text_interest) => {
     var re = new RegExp(text_interest,'g')
 
-
-    // search by title
-    return [
-      ...this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } ),
-      ...this.getApiManifestNameAndNotes().filter((x) => { return x[1].search(re) > -1 } ),
-      // ...this.getApiManifestNameAndDescriptions().filter((x) => { return x[1].search(re) > -1 } )
-    ]
+    return [...new Set(
+      [
+        ...this.getApiManifestNameAndTitles().filter((x) => { return x[1].search(re) > -1 } ),
+        ...this.getApiManifestNameAndNotes().filter((x) => { return x[1].search(re) > -1 } ),
+        // ...this.getApiManifestNameAndDescriptions().filter((x) => { return x[1].search(re) > -1 } )
+      ]
+    )]
 
     // if (text_interest.trim().length > 0){
     //   var re = new RegExp(text_interest,'g')
