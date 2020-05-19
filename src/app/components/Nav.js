@@ -20,7 +20,7 @@ import NavSignUpButton from './Nav/NavSignUpButton';
 import NavChangeLang from './Nav/NavChangeLang';
 
 function Nav(){
-  const {say, active_lang,changeLang} = useContext(LangContext);
+  const {say, getCurrentLang,changeLang} = useContext(LangContext);
 
   function handleOnChange(e){
     if (active_lang==LANG.EN){
@@ -52,9 +52,9 @@ function Nav(){
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Segment align="start">
-            <NavItem href={`${active_lang}/`} text={say(meanings.LINK_INDEX)}></NavItem>
-            <NavItem href={`${active_lang}/about`} text={say(meanings.LINK_ABOUT_ME)}></NavItem>
-            <NavItem href={`${active_lang}/test`} text={say(meanings.TEST_PAGE)}></NavItem>
+            <NavItem href={`${getCurrentLang()}/`} text={say(meanings.LINK_INDEX)}></NavItem>
+            <NavItem href={`${getCurrentLang()}/about`} text={say(meanings.LINK_ABOUT_ME)}></NavItem>
+            <NavItem href={`${getCurrentLang()}/test`} text={say(meanings.TEST_PAGE)}></NavItem>
           </Navbar.Segment>
           <Navbar.Segment align="end">
             <Navbar.Item>

@@ -1,18 +1,12 @@
+let DEFAULT_SEARCH_TEXT = 'DEFAULT_SEARCH_TEXT'
 let HELLOWORLD = 'helloworld'
-
-let SITE_TITLE = 'hong kong statistics'
-let SITE_TITLE_EXPLAIN = 'data.gov.hk 的統計數字'
-
-
 let LINK_ABOUT_ME = 'About me'
 let LINK_INDEX = 'Index'
-
+let MORE_INFO = "more info"
+let SITE_TITLE = 'hong kong statistics'
+let SITE_TITLE_EXPLAIN = 'data.gov.hk 的統計數字'
 let TEST = 'test'
 let TEST_PAGE = 'test page'
-
-let DEFAULT_SEARCH_TEXT = 'DEFAULT_SEARCH_TEXT'
-
-let MORE_INFO = "more info"
 
 export default {
   DEFAULT_SEARCH_TEXT,

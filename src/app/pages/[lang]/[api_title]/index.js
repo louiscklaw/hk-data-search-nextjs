@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 
+import {LangContext} from '../../../context'
 import {Footer} from '../../../components'
 
 
-function ApiIdIndex({api_id}){
+function ApiTitleIndexPage({api_title}){
+  const {getCurrentLang} = useContext(LangContext);
+
   return(
     <>
-      {api_id}
-      ApiIdIndex
-      <Link href={ '/en' } >
+      {api_title}
+      <Link href={ `/${getCurrentLang()}` } >
         <a>Back</a>
       </Link>
+
+      Defails
 
       <pre>
         {JSON.stringify({test: 'testing'}, null, 1)}
@@ -29,4 +33,4 @@ export async function getServerSideProps(context){
   }
 }
 
-export default ApiIdIndex
+export default ApiTitleIndexPage

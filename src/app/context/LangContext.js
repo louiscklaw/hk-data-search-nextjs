@@ -6,12 +6,10 @@ import zh from '../lang/zh'
 import en from '../lang/en'
 
 const default_lang = 'zh'
-const current_lang = default_lang
 const lang_list = ['zh','en']
 
 export const LangContext = createContext({
   meanings,
-  current_lang,
   default_lang,
   lang_list
 });
@@ -40,7 +38,6 @@ function LangContextProvider(props){
   return (
     <LangContext.Provider value={{
       meanings,
-      current_lang,
       default_lang,
       lang_list,
 
