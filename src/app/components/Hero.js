@@ -9,24 +9,24 @@ function Hero(){
   const {updateSearchFilter, match_api_list} = React.useContext(GlobalContext);
   const {say} = React.useContext(LangContext);
   return(
-<section class="hero is-info is-medium is-bold">
-  <div class="hero-head">
+<section className="hero is-info is-medium is-bold">
+  <div className="hero-head">
 
   </div>
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
+  <div className="hero-body">
+    <div className="container has-text-centered">
+      <h1 className="title">
         {say(meanings.SITE_TITLE)}
       </h1>
 
 
-      <h2 class="subtitle">
+      <h2 className="subtitle">
         hong kong statistics search
       </h2>
 
       <InputBox onChangeSearchFilter={updateSearchFilter}></InputBox>
 
-      <div style={{paddingTop: "30px;"}}>
+      <div>
         Number of match {match_api_list ? match_api_list.length : 0}
       </div>
 

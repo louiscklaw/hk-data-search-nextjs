@@ -17,7 +17,6 @@ const all_api_manifest = async () => {
         var _ = await fetch(getPackageDetailUrl(api_name))
           .then(res=> res.json())
           .then(res_json => {
-            console.log(`done -> ${api_name}`)
             all_api_json[api_name] = res_json
           })
       }
@@ -28,25 +27,3 @@ const all_api_manifest = async () => {
 }
 
 all_api_manifest()
-
-// const package_list = common.readPackageList().result
-
-// const detail_url = 'https://data.gov.hk/tc-data/api/3/action/package_show?id='
-
-// // common.fetchJSON('https://data.gov.hk/tc-data/api/3/action/package_show?id=aahk-team1-flight-info')
-// //   .then(res_json => console.log(res_json))
-
-// const forlooptest = async () =>{
-//   let i = 0
-//   for(one_package of package_list.slice(2,5)){
-//     let temp_url = detail_url+one_package
-//     console.log(`getting ${i++}/${package_list.length()} ${temp_url}`)
-
-//     let temp = await common.fetchJSON(detail_url+one_package)
-
-//     fs.writeFileSync(`./result/${one_package}.json`, JSON.stringify(temp))
-
-//   }
-// }
-
-// forlooptest()

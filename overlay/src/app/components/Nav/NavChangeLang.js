@@ -6,7 +6,6 @@ import {LangContext} from '../../context';
 
 function NavChangeLang(props){
   const {active_lang, changeLang} = useContext(LangContext)
-  console.log(active_lang);
 
   function changeLangOnClick(e){
   }

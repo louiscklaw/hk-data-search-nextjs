@@ -32,7 +32,6 @@ function Nav(){
   }
 
   function handleOnClick(e){
-    console.log(say(meanings.HELLOWORLD))
   }
 
   return(

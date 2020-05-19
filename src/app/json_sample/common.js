@@ -7,7 +7,6 @@ fetch('https://data.gov.hk/tc-data/api/3/action/package_list')
   .then(res_json => fs.writeFileSync('./package_list.json', JSON.stringify(res_json)));
 
 function helloworld(){
-  console.log('helloworld')
 }
 
 function readPackageList(){

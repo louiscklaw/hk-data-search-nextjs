@@ -17,7 +17,6 @@ const all_api_manifest = async () => {
         var _ = await fetch(getPackageDetailUrl(api_name))
           .then(res=> res.json())
           .then(res_json => {
-            console.log(`done -> ${api_name}`)
             all_api_json[api_name] = res_json
           })
       }

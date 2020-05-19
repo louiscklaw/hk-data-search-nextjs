@@ -5,7 +5,7 @@ import {get_link} from '../../util'
 
 function NavItem({name, to_href}){
   return(
-    <Link href={get_link('/')}>
+    <Link href={get_link(to_href)}>
       <a className="navbar-item">
         {name}
       </a>

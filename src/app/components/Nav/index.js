@@ -34,7 +34,6 @@ function Nav(){
   }
 
   function handleOnClick(e){
-    console.log(say(meanings.HELLOWORLD))
   }
 
   return(
@@ -54,9 +53,8 @@ function Nav(){
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <NavItem name={say(meanings.LINK_INDEX)} to_href={get_link('/')}></NavItem>
-
-            <NavItem name={say(meanings.LINK_ABOUT_ME)} to_href={get_link('/about')}></NavItem>
+            <NavItem name={say(meanings.LINK_INDEX)} to_href={'/'}></NavItem>
+            <NavItem name={say(meanings.LINK_ABOUT_ME)} to_href={'/about'}></NavItem>
 
           </div>
         </div>

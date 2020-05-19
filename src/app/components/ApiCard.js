@@ -3,6 +3,7 @@ import {Card, Icon, Content} from 'rbx';
 import Link from 'next/link'
 
 import {LangContext} from '../context';
+import {get_link} from '../util';
 
 function ApiCard(props){
   let {say, meanings, getCurrentLang} = useContext(LangContext);
@@ -22,7 +23,7 @@ function ApiCard(props){
 
           <div>{props.tag}</div>
 
-          <Link href={`${getCurrentLang()}/${props.title}`} >
+          <Link href={get_link(`/${props.title}`)} >
             <a>Details</a>
           </Link>
           <div>{props.link}</div>

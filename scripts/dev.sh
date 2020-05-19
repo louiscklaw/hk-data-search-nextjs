@@ -2,16 +2,13 @@
 
 set -ex
 
-rm -rf src/functions/next
-
-cd src/app
-  yarn build
-cd ../..
+# rm -rf src/functions/next
+# cd src/app
+#   yarn build
+# cd ../..
 
 cd src/app
   yarn dev
 cd ../..
 
 # done
-
-firefox

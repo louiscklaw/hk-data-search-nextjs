@@ -62,7 +62,6 @@ function ApiTitleIndexPage({api_title}){
 
     }else{
       return(
-        // console.log(getApiManifestByApiTitle(api_title))
         getApiManifestByApiTitle(api_title).result.resources.map((x) => {
           return (
             <section key={x}>
@@ -158,7 +157,6 @@ function ApiTitleIndexPage({api_title}){
   }
 
   function handleApiPrint(){
-    console.log(getApiManifestNameAndTitles().filter(x => x[0] == api_title).length);
     if (getApiManifestNameAndTitles().filter(x => x[0] == api_title).length > 0){
       return handleApiTitleFound()
     }else{
@@ -174,7 +172,6 @@ function ApiTitleIndexPage({api_title}){
 }
 
 export async function getServerSideProps(context){
-  console.log(context.params);
   return {
     props: context.params
   }

@@ -1,14 +1,13 @@
 import React, {useContext, useEffect} from 'react';
-import App from '../../components/App';
+import Router from 'next/router'
+import Head from 'next/head'
 
+import {Title} from '../../components';
+import App from '../../components/App';
 import {LangContext} from '../../context';
 
-import Router from 'next/router'
-
-
-
 function Index(){
-  const {default_lang, lang_list} = useContext(LangContext)
+  const {default_lang, lang_list, say, meanings} = useContext(LangContext)
 
   useEffect(() => {
     if (typeof(Router.query.lang) != 'undefined' &&  lang_list.indexOf(Router.query.lang) == -1){
@@ -18,6 +17,9 @@ function Index(){
 
   return(
     <>
+      <Head>
+        <title>{say(meanings.LINK_INDEX)}</title>
+      </Head>
       <App />
     </>
   )
