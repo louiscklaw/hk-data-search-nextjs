@@ -7,7 +7,6 @@ import ApiCard from './ApiCard';
 
 function CardList(){
   const {match_api_list} = useContext(GlobalContext);
-  const {say} = useContext(LangContext);
   return(
     <>
       <div className="api-card-list"

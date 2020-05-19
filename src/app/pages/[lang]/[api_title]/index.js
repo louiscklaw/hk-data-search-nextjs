@@ -40,6 +40,7 @@ function ApiTitleIndexPage({api_title}){
 
   return(
     <>
+
       <section>
         <div class="container">
           <Link href={ `/${getCurrentLang()}` } >
@@ -60,7 +61,7 @@ function ApiTitleIndexPage({api_title}){
                 <table class="table" style={{width: "100%"}}>
                   <tbody>
                       {
-                        ['description','url','format','is_api','last_modified'].map((y) => {
+                        ['name','description','url','format','is_api','last_modified'].map((y) => {
                           return(
                             <tr>
                               <th>{y}</th>
@@ -79,9 +80,9 @@ function ApiTitleIndexPage({api_title}){
 
       }
 
-
       <section>
         <div class="container">
+          RAW JSON
           <pre>
             {JSON.stringify( getApiManifestByApiTitle(api_title) , null, 1)}
           </pre>

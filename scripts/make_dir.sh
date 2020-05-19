@@ -3,31 +3,7 @@
 set -ex
 
 mkdir src
-cd src
-  mkdir app functions public
-
-  cd app
-    npm init -y
-    npm install --save next react react-dom \
-    @fortawesome/fontawesome-svg-core \
-    @fortawesome/free-solid-svg-icons \
-    @fortawesome/react-fontawesome \
-    isomorphic-unfetch \
-    rbx \
-    &
-  cd ..
-
-  cd functions
-    npm init -y
-    npm install --save next react react-dom firebase-admin firebase-tools firebase-functions \
-    @fortawesome/fontawesome-svg-core \
-    @fortawesome/free-solid-svg-icons \
-    @fortawesome/react-fontawesome \
-    isomorphic-unfetch \
-    rbx \
-    &
-  cd ..
-cd ..
+scripts/init_npm.sh
 
 wait
 
