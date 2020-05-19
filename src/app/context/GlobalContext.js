@@ -3,6 +3,8 @@ import React , { Component, createContext } from 'react'
 import package_list from '../json_sample/package_list.json';
 import raw_all_api_manifest from '../json_sample/all_api_manifest_99.json';
 
+import {LangContext} from './LangContext'
+
 export const GlobalContext = createContext();
 
 class GlobalContextProvider extends Component {
@@ -10,9 +12,14 @@ class GlobalContextProvider extends Component {
     helloworld:'helloworld',
     raw_all_api_manifest,
     package_list,
-    search_filter: '物業',
+    search_filter: '',
     match_api_list: [null]
   };
+
+  get_link(in_href){
+    let {getCurrentLang} = React.useContext(LangContext);
+    return '/'+getCurrentLang()+in_href
+  }
 
   componentDidMount(){
     this.updateSearchFilter(this.state.search_filter)
@@ -137,6 +144,7 @@ class GlobalContextProvider extends Component {
         getApiManifestNameAndTitles: this.getApiManifestNameAndTitles,
         filterApiMainfestByTitle: this.filterApiMainfestByTitle,
         getApiManifestNameAndTitles:this.getApiManifestNameAndTitles,
+        get_link: this.get_link
         }}>
         { this.props.children }
       </GlobalContext.Provider>

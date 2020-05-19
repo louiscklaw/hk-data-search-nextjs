@@ -31,7 +31,7 @@ function LangContextProvider(props){
       if (Object.keys(zh).indexOf(meaning) > -1){
         return zh[meaning]
       }
-      return zh[meaning]
+      return meaning
     }
   }
 

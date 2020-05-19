@@ -10,6 +10,7 @@ let LINK_INDEX = '主頁'
 let MORE_INFO="更多資料"
 
 let DEFAULT_SEARCH_TEXT = '預設字'
+
 export default {
   ...en_us,
   HELLOWORLD,

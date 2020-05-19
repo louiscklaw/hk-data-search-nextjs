@@ -1,3 +1,5 @@
+import meanings from './meanings'
+
 let DEFAULT_SEARCH_TEXT = 'DEFAULT_SEARCH_TEXT'
 let HELLOWORLD = 'helloworld'
 let LINK_ABOUT_ME = 'About me'
@@ -19,6 +21,7 @@ let LAST_UPDATE = 'last update'
 let API_OUTPUT_FORMAT = 'output format'
 
 export default {
+  ...meanings,
   DEFAULT_SEARCH_TEXT,
   HELLOWORLD,
   LINK_ABOUT_ME,

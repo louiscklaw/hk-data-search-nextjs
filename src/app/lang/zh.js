@@ -19,6 +19,8 @@ let USELESS = '冇用'
 
 let LAST_UPDATE = '更新'
 
+let BACK = '返回'
+
 export default {
   ...en,
   DEFAULT_SEARCH_TEXT,
@@ -34,5 +36,7 @@ export default {
   LOG_IN,
   USEFUL,
   USELESS,
-  LAST_UPDATE
+  LAST_UPDATE,
+  BACK
+
 }

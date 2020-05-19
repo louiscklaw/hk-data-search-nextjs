@@ -7,8 +7,13 @@ import {Footer} from '../../../components'
 
 function ApiTitleIndexPage({api_title}){
 
-  const {getCurrentLang} = useContext(LangContext)
-  const {getApiManifestByApiTitle, getApiManifestNameAndTitles, raw_all_api_manifest}  = useContext(GlobalContext)
+  const {getCurrentLang, say, meanings} = useContext(LangContext)
+  const {
+    getApiManifestByApiTitle,
+    getApiManifestNameAndTitles,
+    raw_all_api_manifest,
+    get_link
+    }  = useContext(GlobalContext)
 
   useEffect(()=>{
     if (typeof(api_title) == 'undefined'){
@@ -95,10 +100,14 @@ function ApiTitleIndexPage({api_title}){
     return(
       <>
       <section>
-        <div class="container">
-          <Link href={ `/${getCurrentLang()}` } >
-            <a>Back</a>
+        <div className="container">
+          <Link href={ get_link('/') } >
+            <a className="button is-light">
+              {say(meanings.BACK)}
+            </a>
           </Link>
+
+
         </div>
       </section>
         {
