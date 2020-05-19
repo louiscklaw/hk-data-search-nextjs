@@ -54,8 +54,8 @@ function Nav(){
           <Navbar.Segment align="start">
             <NavItem href={`${active_lang}/`} text={say(meanings.LINK_INDEX)}></NavItem>
             <NavItem href={`${active_lang}/about`} text={say(meanings.LINK_ABOUT_ME)}></NavItem>
+            <NavItem href={`${active_lang}/test`} text={say(meanings.TEST_PAGE)}></NavItem>
           </Navbar.Segment>
-
           <Navbar.Segment align="end">
             <Navbar.Item>
               <Button.Group>

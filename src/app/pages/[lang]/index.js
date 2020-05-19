@@ -3,21 +3,13 @@ import App from '../../components/App';
 
 import {LangContext} from '../../context';
 
-function Index({lang}){
+function Index(){
   return(
     <>
 
-      <App lang={lang}/>
+      <App />
     </>
   )
 }
-
-export async function getServerSideProps(context){
-
-  return {
-    props: context.params
-  }
-}
-
 
 export default Index;

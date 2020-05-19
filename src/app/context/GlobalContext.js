@@ -42,17 +42,17 @@ class GlobalContextProvider extends Component {
     return Object.keys(this.state.raw_all_api_manifest);
   }
 
-  getApiManifestByApiName = (api_name) => {
+  getApiManifestByApiTitle = (api_name) => {
     return this.state.raw_all_api_manifest[api_name]
   }
 
-  getApiManifestByApiNameAndField = (api_name, field) => {
+  getApiManifestByApiTitleAndField = (api_name, field) => {
     return this.state.raw_all_api_manifest[api_name][field]
   }
 
 
   getApiManifestDescription = (api_name) => {
-    return this.getApiManifestByApiName(api_name).result.resources[0].description;
+    return this.getApiManifestByApiTitle(api_name).result.resources[0].description;
   }
 
   getApiManifestNameAndDescriptions = () => {
@@ -62,7 +62,7 @@ class GlobalContextProvider extends Component {
   }
 
   getApiManifestNote = (api_name) => {
-    return this.getApiManifestByApiName(api_name).result.notes;
+    return this.getApiManifestByApiTitle(api_name).result.notes;
   }
 
   getApiManifestNameAndNotes = () => {
@@ -74,7 +74,7 @@ class GlobalContextProvider extends Component {
 
 
   getApiManifestTitle = (api_name) => {
-    return this.getApiManifestByApiName(api_name).result.title;
+    return this.getApiManifestByApiTitle(api_name).result.title;
   }
 
   getApiManifestNameAndTitles = () => {
@@ -84,7 +84,7 @@ class GlobalContextProvider extends Component {
   }
 
   getApiManifestUpdateFrequency = (api_name) => {
-    return this.getApiManifestByApiName(api_name).result.update_frequency;
+    return this.getApiManifestByApiTitle(api_name).result.update_frequency;
   }
 
   filterApiMainfestByTitle = (text_interest) => {
@@ -116,7 +116,7 @@ class GlobalContextProvider extends Component {
         ...this.state,
         changeTheWorld: this.changeTheWorld,
         getApiManifestKeys: this.getApiManifestKeys,
-        getApiManifestByApiName: this.getApiManifestByApiName,
+        getApiManifestByApiTitle: this.getApiManifestByApiTitle,
         getApiManifestTitle: this.getApiManifestTitle,
         updateSearchFilter: this.updateSearchFilter,
         getApiManifestNameAndTitles: this.getApiManifestNameAndTitles,

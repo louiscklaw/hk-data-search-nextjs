@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "firebase emulators:start --only functions",
+    "serve": "echo -e \"\\e[31mrunning firebase serve is not expected in this project\\e[0m\"",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",

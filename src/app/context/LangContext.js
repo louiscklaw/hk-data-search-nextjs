@@ -6,17 +6,27 @@ import zh from '../lang/zh'
 import en from '../lang/en'
 
 export const LangContext = createContext({
-  meanings
+  meanings,
+  current_lang: 'en'
 });
 
 function LangContextProvider(props){
   const {query} = useRouter();
 
+  function getCurrentLang(){
+    return query.lang
+  }
+
   function say(meaning){
     if (query.lang == 'en') {
-      console.log(en)
-      return en[meaning]
+      if (Object.keys(en).indexOf(meaning) > -1){
+        return en[meaning]
+      }
+      return meaning
     }else{
+      if (Object.keys(zh).indexOf(meaning) > -1){
+        return zh[meaning]
+      }
       return zh[meaning]
     }
   }
@@ -24,7 +34,8 @@ function LangContextProvider(props){
   return (
     <LangContext.Provider value={{
       meanings,
-      say
+      say,
+      getCurrentLang
       }}>
       { props.children }
     </LangContext.Provider>

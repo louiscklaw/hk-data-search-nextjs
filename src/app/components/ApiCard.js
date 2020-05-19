@@ -1,31 +1,33 @@
 import React, {useContext} from 'react';
 import {Card, Icon, Content} from 'rbx';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
 import {LangContext} from '../context';
 
 function ApiCard(props){
-  let {say, meanings} = useContext(LangContext);
+  let {say, meanings, getCurrentLang} = useContext(LangContext);
   return(
     <>
       <Card style={{
-        minHeight: '300px',
-        width: "300px",
-
+        minHeight: '250px',
+        width: "200px",
         margin: "30px"
         }}>
         <Card.Content>
-          <div className="api-name">
+          <div className="api-title">
             {props.title}
           </div>
 
           <div>{props.description}</div>
+
           <div>{props.tag}</div>
+
+          <Link href={`${getCurrentLang()}/${props.title}`} >
+            <a>Details</a>
+          </Link>
           <div>{props.link}</div>
 
-      <div>{say(meanings.MORE_INFO)}</div>
+          <div>{say(meanings.MORE_INFO)}</div>
         </Card.Content>
       </Card>
     </>
