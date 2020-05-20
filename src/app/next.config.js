@@ -1,3 +1,5 @@
 module.exports = {
-  /* config options here */
-}
+  experimental: {
+    sprFlushToDisk: false,
+  },
+};

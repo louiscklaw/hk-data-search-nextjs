@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-set -ex
+set -x
 
 rm -rf src/app/.next
 rm -rf src/functions/next
 
-source scripts/build.sh
-cp -r src/app/.next src/functions/next
+set -ex
+
+scripts/build.sh
+# cp -r src/app/.next src/functions/.next
 
 cd src/functions
   npm run deploy
