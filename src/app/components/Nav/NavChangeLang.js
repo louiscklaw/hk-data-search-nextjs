@@ -13,7 +13,9 @@ function NavChangeLang(){
       return(
         <>
           <a className="button is-light" onClick={(e)=> { Router.push('/'+LANG.ZH) }}>
-            繁
+            <span style={{paddingRight: '10px'}}>
+              <i class="fas fa-globe-asia" ></i>
+            </span>繁
           </a>
         </>
       )
@@ -22,14 +24,14 @@ function NavChangeLang(){
       return(
         <>
           <a className="button is-light" onClick={(e)=> { Router.push('/'+LANG.EN) }}>
-            En
+            <span style={{paddingRight: '10px'}}>
+              <i class="fas fa-globe-europe" ></i>
+            </span>En
           </a>
       </>
       )
       break;
   }
-
-
 }
 
 export default NavChangeLang

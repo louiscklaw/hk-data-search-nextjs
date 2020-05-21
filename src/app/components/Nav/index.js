@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import Link from 'next/link';
-import {Navbar, Button} from 'rbx';
 
 import {LangContext} from '../../context';
 // import {LangContext} from '../../context';
@@ -16,7 +15,7 @@ import meanings from '../../lang/meanings';
 import NavItem from './NavItem';
 import NavLoginButton from './NavLoginButton';
 import NavSignUpButton from './NavSignUpButton';
-
+import NavGithubButton from './NavGithubButton';
 import NavChangeLang from './NavChangeLang';
 
 import { get_link } from '../../util';
@@ -63,6 +62,7 @@ function Nav(){
 
                 <NavChangeLang></NavChangeLang>
                 <NavSignUpButton></NavSignUpButton>
+                <NavGithubButton></NavGithubButton>
               </div>
             </div>
           </div>

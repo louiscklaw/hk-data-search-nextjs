@@ -7,26 +7,13 @@ cd src
 
   cd app
     npm init -y
-    npm install --save next react react-dom \
-    @fortawesome/fontawesome-svg-core \
-    @fortawesome/free-brands-svg-icons \
-    @fortawesome/free-regular-svg-icons \
-    @fortawesome/free-solid-svg-icons \
-    @fortawesome/react-fontawesome \
-    isomorphic-unfetch \
-    rbx \
-    &
+    npm install --save next react react-dom
+    npm install --save firebase-admin firebase-tools firebase-functions
   cd ..
 
   cd functions
     npm init -y
-    npm install --save next react react-dom firebase-admin firebase-tools firebase-functions \
-    @fortawesome/fontawesome-svg-core \
-    @fortawesome/free-brands-svg-icons \
-    @fortawesome/free-regular-svg-icons \
-    @fortawesome/free-solid-svg-icons \
-    @fortawesome/react-fontawesome \
-    isomorphic-unfetch \
+    npm install --save next react react-dom firebase-admin firebase-tools firebase-functions
     rbx \
     &
   cd ..

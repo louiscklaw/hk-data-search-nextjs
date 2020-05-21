@@ -16,7 +16,7 @@ function InputBox(props){
 
   return(
     <>
-      <input defaultValue={search_filter || say(meanings.DEFAULT_SEARCH_TEXT)} onChange={(e) => handleOnChange(e)}/>
+      <input defaultValue={search_filter} placeholder={say(meanings.DEFAULT_SEARCH_TEXT)} onChange={(e) => handleOnChange(e)}/>
     </>
   )
 }

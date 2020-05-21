@@ -17,7 +17,9 @@ class MyDocument extends Document {
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
-          <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+          <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
         </Head>
         <body class="has-navbar-fixed-top">
 

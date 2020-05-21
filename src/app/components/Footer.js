@@ -2,12 +2,6 @@ import React, {useContext} from 'react';
 
 import {GlobalContext} from '../context';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
-import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faSnapchat } from '@fortawesome/free-brands-svg-icons'
-
 function Footer(){
   const {match_api_list} = useContext(GlobalContext);
   return(
@@ -18,17 +12,21 @@ function Footer(){
 
           <p>
             <a href="" className="social-link">
-              <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+              {/* <FontAwesomeIcon icon={faFacebookSquare} size="2x" /> */}
+              <i class="fab fa-facebook-square"></i>
             </a>
 
             <a href="" className="social-link">
-              <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
+              {/* <FontAwesomeIcon icon={faTwitterSquare} size="2x" /> */}
+              <i class="fab fa-twitter-square"></i>
             </a>
             <a href="" className="social-link">
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
+              {/* <FontAwesomeIcon icon={faInstagram} size="2x" /> */}
+              <i class="fab fa-instagram-square"></i>
             </a>
             <a href="" className="social-link">
-              <FontAwesomeIcon icon={faSnapchat} size="2x" />
+              {/* <FontAwesomeIcon icon={faSnapchat} size="2x" /> */}
+              <i class="fab fa-snapchat-square"></i>
             </a>
           </p>
 
